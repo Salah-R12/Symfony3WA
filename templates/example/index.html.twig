@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+ {% block stylesheets %}
+     <link href="{{ asset('css/global.css') }}" rel="stylesheet" />
+ {% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Hello {{ controller_name }}! ✅</h1>
+        <a  href ="{{ path('example',{ limit : 6 })}}" >  page example  </a>
+        This friendly message is coming from:
+        <ul>
+            <li>Your controller at <code><a href="{{ 'C:/wamp64/www/symfony-project3WA/src/Controller/ExampleController.php'|file_link(0) }}">src/Controller/ExampleController.php</a></code></li>
+            <li>Your template at <code><a href="{{ 'C:/wamp64/www/symfony-project3WA/templates/example/index.html.twig'|file_link(0) }}">templates/example/index.html.twig</a></code></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+  <p class="stylee"> Je suis le sidebar de votre site la limit est {{ limits }}</p>
+{% endblock %}
+
+{% block footer %}
+    {% if DisplayFooter %}
+      {% include 'example/footer.html.twig' %}
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/javascript.js') }}"> </script>
+{% endblock %}
